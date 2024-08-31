@@ -1,6 +1,6 @@
 var rev = "fwd";
 function titlebar(val){
-    var msg  = "Playground | Gemini ~ 👾";
+    var msg  = "Playground | Gemini ~~ 👾";
     var res = " ";
     var speed = 250;
     var pos = val;
