@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles.css">
     <script defer src="AnimatedTitle.js"></script>
   </head>
+
   <body>
     <div class="chatCard">
       <div class="head">
@@ -26,22 +27,17 @@
           <div class="text">How can I help you today?</div>
         </div>
         <!-- User Message Template -->
-        
-        
       </div>
       <div class="input-area">
         <div class="loading">Typing<span class="dot1"></span> <span class="dot2"></span> <span class="dot3"></span></div>
         <div class="sending">
           <input type="text" placeholder="Message" class="input" />
-        <button class="send"><i class="fa-regular fa-paper-plane"></i></button>
+          <button class="send"><i class="fa-regular fa-paper-plane"></i></button>
+          <button class="start-recording"><i class="fa-solid fa-microphone"></i></button>
+          <button class="stop-recording" style="display:none;"><i class="fa-solid fa-stop"></i></button>
         </div>
-      </div>
-        
       </div>
     </div>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
-
-
-

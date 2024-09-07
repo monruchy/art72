@@ -245,3 +245,39 @@ body {
     animation-delay: 0.66s;
 }
 
+/* ปุ่มบันทึกเสียง */
+.start-recording, .stop-recording {
+    height: 100%;
+    width: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(133, 130, 130, 0.41);
+    border-radius: 50%; /* ทำให้เป็นวงกลม */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    color: white;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.start-recording:hover, .stop-recording:hover {
+    background-color: rgba(255, 0, 0, 0.8); /* เปลี่ยนเป็นสีแดงเมื่อ hover */
+    transform: scale(1.1); /* ขยายเมื่อ hover */
+}
+
+.start-recording:active, .stop-recording:active {
+    transform: scale(0.95); /* ลดขนาดเมื่อกด */
+}
+
+/* เพิ่มเงา */
+.start-recording, .stop-recording {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* ปุ่มหยุดบันทึก */
+.stop-recording {
+    background-color: rgba(255, 0, 0, 0.7); /* สีแดงเริ่มต้น */
+}

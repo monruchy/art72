@@ -1,0 +1,284 @@
+            <!DOCTYPE html>
+            <html lang="th">
+                <head>
+                    <meta charset="utf-8">
+                    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+                    <meta name="viewport" content="width=device-width, initial-scale=1">
+                    <meta name="description" content="ระบบการคัดเลือกบุคคลเข้าศึกษาต่อในระดับมหาวิทยาลัย ปีการศึกษา 2567">
+                    <title>ABU. | Ask Buddy Uni</title>
+                    <meta property="og:image:width" content="1200">
+                    <meta property="og:image:height" content="630">
+                    <meta property="og:image" content="https://www.mytcas.com/cover.jpg">
+                    <link rel="preload" href="/fonts/kvl-400.woff2" as="font" type="font/woff2">
+                    <link rel="preload" href="/fonts/kvl-700.woff2" as="font" type="font/woff2">
+                    <script defer data-domain="mytcas.com" src="https://stat.seedwebs.com/js/plausible.js" type="ba5193d737641b6301c01cbe-text/javascript"></script>
+                    <link rel="stylesheet" href="/_astro/courses.CzjDGjDm.css">
+                    <link rel="stylesheet" href="/_astro/index.UgyIeBMx.css">
+                    <style>
+                        .input-search {
+                            width: 100%;
+                            max-width: 400px;
+                            position: relative
+                        }
+
+                        .input-search #search {
+                            width: 100%;
+                            padding: 8px 30px 8px 12px
+                        }
+
+                        .input-search #search:focus-visible {
+                            border-color: #fff;
+                            outline: 3px solid var(--teal)
+                        }
+
+                        .input-search .i-search {
+                            position: absolute;
+                            top: 13px;
+                            right: 12px;
+                            color: var(--blue)
+                        }
+
+                        .t-result {
+                            position: relative;
+                            z-index: 10;
+                            filter: drop-shadow(var(--s-shadow-2));
+                            visibility: hidden;
+                            opacity: 0;
+                            height: 0;
+                            overflow: hidden;
+                            transition: transform .4s ease-in-out,opacity .3s linear,visibility 0s linear
+                        }
+
+                        .t-result.active {
+                            visibility: visible;
+                            height: auto;
+                            opacity: 1;
+                            overflow: unset;
+                            transform: translateY(-20px);
+                            transition-timing-function: cubic-bezier(0,.2,.25,1),linear,linear;
+                            margin-bottom: -20px
+                        }
+
+                        .t-result.active:after {
+                            content: "";
+                            display: block;
+                            position: absolute;
+                            left: calc(50% - 5px);
+                            top: -8px;
+                            width: 0;
+                            height: 0;
+                            border-style: solid;
+                            border-width: 0 10px 8px 10px;
+                            border-color: transparent transparent var(--teal) transparent;
+                            z-index: 2
+                        }
+
+                        .t-result h2 {
+                            margin: 0;
+                            padding: 8px var(--s-box);
+                            background-color: var(--teal);
+                            color: #fff;
+                            width: 100%;
+                            font-size: 1.125em;
+                            border-radius: 5px 5px 0 0;
+                            padding: 12px 16px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between
+                        }
+
+                        .t-result h2 b {
+                            font-size: 1rem;
+                            font-weight: 400
+                        }
+
+                        @media (min-width: 768px) {
+                            .t-result {
+                                max-width:750px;
+                                transform: translate(-50%)
+                            }
+
+                            .t-result.active {
+                                left: 50%;
+                                transform: translate(-50%,-30px)
+                            }
+
+                            .t-result.-left {
+                                transform: translate(0)
+                            }
+
+                            .t-result.-left.active {
+                                left: 0;
+                                transform: translateY(-30px)
+                            }
+
+                            .t-result.-left.active:after {
+                                left: 30px
+                            }
+                        }
+
+                        .t-programs {
+                            padding: 0;
+                            margin: 0;
+                            background-color: #fff;
+                            border-radius: 0 0 5px 5px
+                        }
+
+                        .t-programs li {
+                            list-style: none;
+                            display: block;
+                            padding: 16px;
+                            position: relative
+                        }
+
+                        .t-programs li:nth-child(2n) {
+                            background-color: #f3f8fd
+                        }
+
+                        .t-programs li:last-child {
+                            border-radius: 0 0 5px 5px
+                        }
+
+                        .t-programs img {
+                            position: absolute;
+                            left: 16px;
+                            top: 22px
+                        }
+
+                        .t-programs a {
+                            display: block;
+                            color: var(--blue);
+                            line-height: 1.4;
+                            padding-left: 64px
+                        }
+
+                        .t-programs a>b,.t-programs a>span {
+                            display: block;
+                            font-size: .9em;
+                            font-weight: 400
+                        }
+
+                        .t-programs a strong {
+                            color: #ff6b00
+                        }
+
+                        .t-programs h3 {
+                            font-size: 1em;
+                            margin: 0 0 4px;
+                            font-weight: 700
+                        }
+
+                        .search-hide {
+                            transition: .4s ease-in-out;
+                            padding-top: 12px
+                        }
+
+                        .search-hide .i-university {
+                            width: 20px
+                        }
+
+                        .search-hide.active {
+                            opacity: 0
+                        }
+                    </style>
+                    <script type="ba5193d737641b6301c01cbe-module" src="/_astro/hoisted.tl-FwBMp.js"></script>
+                    <script type="ba5193d737641b6301c01cbe-module" src="/_astro/page.BG5lM7_G.js"></script>
+                </head>
+                <body>
+                    <a class="skip-link _sr" href="#content">Skip to content - ข้ามไปที่เนื้อหา</a>
+                    <header id="head">
+                        <nav class="t-nav">
+                            <ul>
+                                <li>
+                                    <a href="index.html">
+                                        <img src="/img/i/icon.svg" alt="TCAS Logo" width="20" height="24">
+                                        <span>หน้าแรก</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="chat.html">
+                                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
+                                            <path d="M 24 6.0117188 C 22.96575 6.0117188 21.932156 6.2355937 20.972656 6.6835938 L 2.8652344 15.138672 C 2.3372344 15.384672 2 15.916047 2 16.498047 C 2 17.080047 2.3372344 17.611422 2.8652344 17.857422 L 20.972656 26.3125 C 21.949656 26.7685 22.974 26.996094 24 26.996094 C 25.026 26.996094 26.051344 26.7685 27.027344 26.3125 L 34 23.056641 L 34 35.503906 A 2.5 2.5 0 0 0 35.5 40 A 2.5 2.5 0 0 0 37 35.501953 L 37 21.835938 A 1.50015 1.50015 0 0 0 36.759766 20.765625 A 1.50015 1.50015 0 0 0 36.685547 20.664062 A 1.50015 1.50015 0 0 0 35.914062 20.138672 A 1.50015 1.50015 0 0 0 35.910156 20.136719 L 26.267578 15.666016 C 26.100483 15.481771 26 15.245683 26 14.998047 C 26 14.857047 26.03075 14.715078 26.09375 14.580078 C 26.32475 14.078078 26.921875 13.86175 27.421875 14.09375 L 37.857422 18.931641 C 38.554422 19.254641 39 19.953656 39 20.722656 L 45.134766 17.857422 C 45.154766 17.848422 45.160734 17.839078 45.177734 17.830078 C 45.465734 17.683078 45.712375 17.448813 45.859375 17.132812 C 46.209375 16.381813 45.884766 15.488672 45.134766 15.138672 L 27.027344 6.6835938 C 26.067844 6.2355937 25.03425 6.0117187 24 6.0117188 z M 10 24.396484 L 10 34.529297 C 10 36.678297 11.243969 38.636625 13.167969 39.515625 C 16.826969 41.186625 20.345875 42 23.921875 42 L 24 42 L 24.005859 42 C 26.723859 41.99 29.523422 41.503125 32.232422 40.578125 C 31.473422 39.773125 31 38.694 31 37.5 C 31 36.437 31.384 35.473125 32 34.703125 L 32 27.197266 L 27.873047 29.123047 C 26.635047 29.702047 25.332 29.996094 24 29.996094 C 22.668 29.996094 21.365953 29.702047 20.126953 29.123047 L 10 24.396484 z" fill="currentColor"></path>
+                                        </svg>
+                                        <span>
+                                            <em class="_plus">แชท</em>
+                                            บอท
+                                        </span>
+                                    </a>
+                                </li>
+
+
+
+                                <li class="sub">
+                                    <a href="info.html" rel="prefetch">
+                                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
+                                            <path d="M 13.5 4 C 10.467 4 8 6.467 8 9.5 L 8 36 L 8 37.5 L 8 38.5 C 8 41.519774 10.480226 44 13.5 44 L 39.5 44 A 1.50015 1.50015 0 1 0 39.5 41 L 13.5 41 C 12.273237 41 11.277238 40.152347 11.050781 39 L 39.5 39 C 40.329 39 41 38.329 41 37.5 L 41 9.5 C 41 6.467 38.533 4 35.5 4 L 35 4 L 35 20.5 C 35 21.029 34.720625 21.519062 34.265625 21.789062 C 34.029625 21.929063 33.765 22 33.5 22 C 33.253 22 33.00525 21.938406 32.78125 21.816406 L 28 19.207031 L 23.21875 21.816406 C 22.75475 22.070406 22.191375 22.060063 21.734375 21.789062 C 21.279375 21.520063 21 21.029 21 20.5 L 21 4 L 13.5 4 z M 24 4 L 24 17.972656 L 27.28125 16.183594 C 27.50425 16.061594 27.753 16 28 16 C 28.247 16 28.49575 16.061594 28.71875 16.183594 L 32 17.972656 L 32 4 L 24 4 z" fill="currentColor"></path>
+                                        </svg>
+
+                                        <span>
+                                            คู่มือ<em class="_plus">การใช้งาน</em>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </header>
+                    <main id="content">
+                        <div class="t-intro">
+                            <div class="hero s-container">
+                                <div class="title">
+                                    <img src="/img/ABU.png" alt="TCAS Logo" width="236" height="88" class="logo">
+                                    <h1>
+                                        <span class="en">ABU | Ask Buddy Uni</span>
+                                        <span class="th">คำแนะนำในการใช้งานระบบ ABU</span>
+                                    </h1>
+                                    
+                                    </a>
+                                </div>
+                                 <div class="s-container t-sec-cal">
+                                     <h2>
+                                         <span class="th"><h3><br>1.เลือกหัวข้อ Chat bot for help</h3>
+
+                                             • หลังจากเข้าสู่แชทแล้วสามารถแชทพูดคุยกับบอทได้
+                                            <br>‎
+                                             <h3>2.เริ่มการสนทนา</h3>
+                                             • พิมพ์คำถามหรือข้อสงสัยของคุณลงในช่องข้อความและกดส่งข้อความ
+                                             <br>
+                                             • แชทบอทจะประมวลผลคำถามของคุณและให้คำตอบที่เกี่ยวข้อง
+                                             <br>‏‎
+                                             <h3>ตัวอย่างคำถามที่สามารถถามแชทบอทได้</h3>
+                                             • ค่าเทอมในการศึกษาจบจบหลักสูตรวิศวกรรมศาสตรบัณฑิต สาขาวิชาวิศวกรรมคอมพิวเตอร์ จุฬาลงกรณ์มหาวิทยาลัย?
+                                             <br>
+                                             • ขั้นตอนการสมัครเข้าเรียนต่อปริญญาโทมีอะไรบ้าง?
+                                             <br>
+                                             • ต้องการศึกษาต่อแพทยศาสตรบัณฑิต แพทยศาสตรบัณฑิตวิทยาเขต ขอนแก่น มหาวิทยาลัยขอนแก่น ต้องทำยังไงบ้าง?
+                                             <br>
+                                             • มีทุนการศึกษาสำหรับนักศึกษาต่างชาติที่ต้องการเข้ามาศึกษาในไทยไหมบ้างไหม?
+                                             <br>ㅤ
+                                             <h3>หวังว่าข้อมูลนี้จะเป็นประโยชน์ในการใช้งาน ABU. | Ask Buddy Bot สำหรับการศึกษาต่อของคุณนะครับ<h3>
+                                         </span>
+                                     </h2>
+                                 </div>
+                                <div class="banner">
+
+                                </div>
+                            </div>
+                            <div class="search">
+
+                                <div class="input-search">
+
+
+                                </div>
+                                <a href="https://course.mytcas.com/universities/" class="s-flex search-hide">
+
+
+                                </a>
+                            </div>
+                        </div>
+                        <div class="t-sec p-0">
+                            <div id="results" class="t-result"></div>
+                        </div>
+
+                            </script>
+
